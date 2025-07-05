@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  text-align: center;
+}
+
+.title {
+  margin-top: 20px;
+}
+
+.filters {
+  margin: 20px;
+}
+.filters button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.filters button.active,
+.filters button:hover {
+  background: #0056b3;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.item:hover img {
+  transform: scale(1.05);
+  filter: brightness(80%);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+.controls span {
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
